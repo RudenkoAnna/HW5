@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="weather.css" />
+    <title>Weather</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <form id="cityForm">
+            <input type="text" placeholder="Enter a city" id="textInput" />
+            <button type="submit" id="searchbutton">Search</button>
+            <button id="currentlocation">Current location</button>
+          </form>
+          <div class="row">
+            <div class="col-6">
+              <h1 id="city">Boryspil</h1>
+              <h2>
+                Tue,June 7
+                <br />
+
+                17:27
+              </h2>
+              <h3>
+                <div class="description">
+                  <div id="weatherId">Partly Cloudy</div>
+                  <div id="wind">Wind: 10 km/h</div>
+                  <div id="humidity">Humidity: 46%</div>
+                </div>
+              </h3>
+            </div>
+            <div class="col-6">
+              <div class="clearfix">
+                <img src="images/SUN.png" width="90" class="float-start" />
+                <div class="float-start">
+                  <span id="temper" class="temper">20</span
+                  ><span class="hight"> °C </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row tmp">
+            <div class="col-2">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Wed</h5>
+                  <img src="images/SKYsun.png" width="90" class="float-start" />
+                  <p class="card-text"><strong>27°C </strong> 15°C</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Thu</h5>
+                  <img src="images/SKYsun.png" width="90" class="float-start" />
+
+                  <p class="card-text"><strong>21°C </strong>14°C</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Fri</h5>
+                  <img src="images/SKYsun.png" width="90" class="float-start" />
+
+                  <p class="card-text"><strong>28°C </strong>20°C</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Sat</h5>
+                  <img src="images/SUN.png" width="90" class="float-start" />
+
+                  <p class="card-text"><strong>23°C </strong>16°C</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Sun</h5>
+                  <img
+                    src="images/SUNrain.png"
+                    width="90"
+                    class="float-start"
+                  />
+
+                  <p class="card-text"><strong>24°C </strong>15°C</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Mon</h5>
+                  <img
+                    src="images/SUNrain.png"
+                    width="90"
+                    class="float-start"
+                  />
+
+                  <p class="card-text"><strong>21°C </strong>15°C</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
