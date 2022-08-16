@@ -37,6 +37,7 @@ todayIS();
 //
 
 function showTemperature(response) {
+  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
   let temperature = Math.round(response.data.main.temp);
   let tempTOchange = document.querySelector("#temper");
