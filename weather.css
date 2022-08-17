@@ -91,3 +91,6 @@ button:hover {
   top: -27px;
   font-size: 18px;
 }
+.float-start.active {
+  color: gray;
+}
