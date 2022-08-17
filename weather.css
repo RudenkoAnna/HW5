@@ -91,6 +91,11 @@ button:hover {
   top: -27px;
   font-size: 18px;
 }
-.float-start.active {
-  color: gray;
+.weather-temperature .active {
+  color: black;
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
 }
