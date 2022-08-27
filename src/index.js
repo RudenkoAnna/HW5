@@ -32,7 +32,7 @@ function todayIS() {
 }
 todayIS();
 
-// Week 5
+// final project
 
 //
 
