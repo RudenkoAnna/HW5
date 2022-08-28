@@ -33,7 +33,17 @@ function todayIS() {
 todayIS();
 
 // final project
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "67bd5f95b927ba25009785402ef4eff3";
+  ///let apiUrl = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${coordinates.lat}&lon=${coordinates.lon}&cnt={5}&appid=${apiKey}&units=metric`;
+  //let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
 function displayForecast(response) {
+  //console.log(response.data.daily);
   //let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
@@ -47,7 +57,7 @@ function displayForecast(response) {
       <div class="weather-forecast-date">
        ${day}
       </div> 
-      <img src="https://openweathermap.org/img/wn/04d@2x.png" 
+      <img src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
        alt=""
         width="50"/> 
         <div class="weather-forecast-temperatures">
@@ -65,15 +75,6 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 //
-function getForecast(coordinates) {
-  console.log(coordinates);
-  let apiKey = "67bd5f95b927ba25009785402ef4eff3";
-  ///let apiUrl = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${coordinates.lat}&lon=${coordinates.lon}&cnt={5}&appid=${apiKey}&units=metric`;
-  //let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
-  axios.get(apiUrl).then(displayForecast);
-}
 
 function showTemperature(response) {
   console.log(response.data);
@@ -93,7 +94,7 @@ function showTemperature(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
   getForecast(response.data.coord);
