@@ -131,24 +131,6 @@ searchButton.addEventListener("submit", search);
 
 //
 
-function searchCurrentLocation(position) {
-  let apiKey = "67bd5f95b927ba25009785402ef4eff3";
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
-
-  axios.get(apiUrl).then(showWeather);
-}
-
-function currentLocation(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(searchCurrentLocation);
-}
-//
-let CurrentLocationButton = document.querySelector("#current-location");
-CurrentLocationButton.addEventListener("click", currentLocation);
-//
-
 function displayCelsiusTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temper");
