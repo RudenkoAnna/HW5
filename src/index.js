@@ -124,6 +124,8 @@ function searchCity(city) {
   let apiKey = "67bd5f95b927ba25009785402ef4eff3";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
 }
 
 let searchButton = document.querySelector("#cityForm");
